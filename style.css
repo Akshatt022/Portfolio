@@ -43,6 +43,26 @@ height: 100%;
     font-family: chaloops3;
     src: url(./fontcase/Chaloops-Regular.ttf);
 } 
+@font-face {
+  font-family: Gilroy1;
+  src: url(./fontcase/Gilroy-Bold.ttf);
+}
+@font-face {
+  font-family: Gilroy2;
+  src: url(./fontcase/Gilroy-ExtraBold.ttf);
+}
+@font-face {
+  font-family: Gilroy3;
+  src: url(./fontcase/Gilroy-SemiBoldItalic.ttf);
+}
+@font-face {
+  font-family: Gilroy4;
+  src: url(./fontcase/Gilroy-Light.ttf);
+}
+@font-face {
+  font-family: Gilroy5;
+  src: url(./fontcase/Gilroy-MediumItalic.ttf);
+}
 .box1{
   width: 50px;
   height: 50px;
@@ -95,7 +115,7 @@ height: 100%;
     height: 40px;
     font-size: 30px;
     border-bottom: 2px solid black;
-    font-family: gilroy;
+    font-family: Gilroy1;
     cursor: default;
 }
 #part2{
@@ -111,7 +131,7 @@ li {
     text-decoration: none;
     color: #111111b0;
     font-size: 1.5vw;
-    font-family: gilroy;
+    font-family: Gilroy3;
     font-weight: 500;
     position: relative;
     text-transform: uppercase;
@@ -181,7 +201,7 @@ a span{
 }
 #type{
     font-size: 70px;
-    font-family: gilroy;
+    font-family: Gilroy3;
     -webkit-text-stroke-color: #000;
     -webkit-text-stroke-width: 1px;
     color: transparent;
@@ -193,7 +213,8 @@ a span{
 }
 #text-box p{
     width: 80%;
-   font-family: gilroy;
+   font-family: Gilroy4;
+   font-weight: 100;
    font-size: 20px; 
    margin-top: 1%;
 }
@@ -349,7 +370,7 @@ cursor: pointer;
       transition: opacity .8s cubic-bezier(0, 0.02, 0, 1);
       font-size: clamp(20px, 3vw, 30px);
       text-shadow: 0 4px 4px rgba(0, 0, 0, .1);
-      font-family: gilroy;
+      font-family: Gilroy5;
     }
   
     .num {
@@ -360,7 +381,7 @@ cursor: pointer;
       left: 20px;
       transition: opacity .8s cubic-bezier(0, 0.02, 0, 1);
       font-size: clamp(20px, 10vw, 80px);
-      font-family: gilroy;
+      font-family: Gilroy1;
     }
     img {
       width: 100%;
@@ -388,7 +409,7 @@ cursor: pointer;
     background-color: #000;
     border-radius: 50px;
     padding:10px;
-    font-family: gilroy;
+    font-family: Gilroy5;
   }
   .carousel-box a:hover{
     cursor: pointer;
@@ -591,7 +612,7 @@ cursor: pointer;
   }
   .keywords h3{
     font-size: 15px;
-    font-family: gilroy;
+    font-family: Gilroy3;
     background-color: transparent;
     border: 2px solid #000;
     border-radius: 50px;
@@ -674,13 +695,13 @@ cursor: pointer;
 }
 .container-left  h1{
   font-size: 55px;
-  font-family: gilroy;
+  font-family: Gilroy1;
   display: flex;
   gap: 20px;
 }
 .container-left p{
   font-size: 30px;
-  font-family: gilroy;
+  font-family: Gilroy4;
   margin-bottom: 20px;
   display: flex;
 }
@@ -722,7 +743,7 @@ form input,form textarea{
 .btn2{
   padding:15px 25px;
   font-size: 18px;
-  font-family: gilroy;
+  font-family: Gilroy5;
   font-weight: 500;
   text-transform: uppercase;
   border-radius: 6px;
@@ -736,7 +757,7 @@ form input,form textarea{
   left: 50%;
   transform: translate(-50%,-50%);
   font-size: 25px;
-  font-family: gilroy;
+  font-family: Gilroy4;
   color: #837e7e;
 }
 #null{
@@ -769,7 +790,7 @@ form input,form textarea{
     width: 100%;
     height: 100%;
     font-size: 5vw;
-    font-family: gilroy;
+    font-family: Gilroy1;
     display: flex;
     align-items: center;
     justify-content: center;
