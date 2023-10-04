@@ -129,7 +129,7 @@ li {
 }
 #nav #part2 a{
     text-decoration: none;
-    color: #111111b0;
+    color: #000;
     font-size: 1.5vw;
     font-family: Gilroy3;
     font-weight: 500;
@@ -740,7 +740,8 @@ form input,form textarea{
   font-size: 19px;
   border-radius: 6px;
 }
-.btn2{
+#submit{
+  width: 120px;
   padding:15px 25px;
   font-size: 18px;
   font-family: Gilroy5;
@@ -750,6 +751,7 @@ form input,form textarea{
   margin-left: 300px;
   background-color: #ff009d;
   cursor: pointer;
+  backdrop-filter: 0 0 10px 10px black;
 }
 #page5>p{
   position: absolute;
