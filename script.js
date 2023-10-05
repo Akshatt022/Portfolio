@@ -169,3 +169,15 @@ const essayinput = document.querySelector('#Message');
 essayinput.addEventListener('change',()=>{
    localStorage.setItem("key-message",essayinput.value)
 })
+let num =0
+function MenupageClose(){
+  const menupage = document.querySelector("#menu-page");
+if(num%2==0){
+  menupage.style.transform = `translateY(0vw)`
+}else{
+  menupage.style.transform = `translateY(-100vh)`
+}
+num++
+}
+const hamburgerMenu = document.querySelector("#Hamburger-menu");
+hamburgerMenu.addEventListener("click",MenupageClose)

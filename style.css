@@ -762,16 +762,135 @@ form input,form textarea{
   font-family: Gilroy4;
   color: #837e7e;
 }
-#null{
+#responsive-view{
   display: none;
 }
+
+
+
 @media (max-width:600px) {
+  #responsive-view{
+    display: inline;
+  }
   #main{
     width: 100vw;
     height: 100vh;
+    position: relative;
+    background-color: rgba(245, 245, 245, 0.779);
+  }
+  body {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  #mob-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  #Hamburger-menu{
+    display: inline;
+    z-index: 9;
+  }
+  .menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    padding: 0;
+  }
+  .line {
+    fill: none;
+    stroke: black;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .line1 {
+    stroke-dasharray: 50 200;
+    stroke-width: 3;
+  }
+  .line2 {
+    stroke-dasharray: 50 60;
+    stroke-width: 3;
+  }
+  .line3 {
+    stroke-dasharray: 50 207;
+    stroke-width: 3;
+  }
+  .opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 3;
+  }
+  .opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 3;
+  }
+  .opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 3;
+  }
+  #part1 h3{
+    font-family: Gilroy3;
+    z-index: 0;
+  }
+  #menu-page{
+    width: 100vw;
+    height: 100vh ;
+    background-color: rgba(245, 245, 245, 0.779);
+    position: absolute;
+    transform: translateY(-100vh);
+    transition: cubic-bezier(0.19, 1, 0.22, 1)2s;
+  }
+  #menus{
+    width: 80%;
+    height: 60%;
+    display: flex;
+    align-items: first baseline;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 30px 0;
+    margin: 150px 30px;
+  }
+  #part2{
+    display: flex;
+    flex-direction: column;
+    align-items: last baseline;
+    justify-content: center;
+    gap: 20px;
+  }
+  #part2 a{
+    text-decoration: none;
+    color: #000;
+    font-family: Gilroy5;
+    font-size: 30px;
+  }
+  #part2 i{
+    font-size: 22px;
+    margin-right: 20px;
+  }
+  #part3{
+    width: 100%;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+  }
+  #part3 i{
+   font-size: 50px;
+  }
+  #menus p{
+    font-size: 13px;
+    white-space: nowrap;
+    font-family: Gilroy4;
   }
   #nav{
     display: none;
@@ -787,14 +906,5 @@ form input,form textarea{
   }
   #page5{
     display: none;
-  }
-  #null{
-    width: 100%;
-    height: 100%;
-    font-size: 5vw;
-    font-family: Gilroy1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }
