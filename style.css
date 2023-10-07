@@ -85,6 +85,8 @@ height: 100%;
 #main{
   position: relative;
   overflow: hidden;
+  background-color: rgba(245, 245, 245, 0.779);
+  
 }
 #page1{
     background-color: rgba(245, 245, 245, 0.779);
