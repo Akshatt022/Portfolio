@@ -6,6 +6,13 @@ var typeEffect = new Typed("#type",{
   backSpeed:80,
   backDelay:1500
 })
+var typeEffect = new Typed("#type1",{
+  strings:["Frontend developer.","Designer.","Coder."],
+  loop:true,
+  typeSpeed:101,
+  backSpeed:80,
+  backDelay:1500
+})
 
 // ------------------ scroll js is here --------------------------//
 
