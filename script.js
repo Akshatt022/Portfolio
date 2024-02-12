@@ -158,29 +158,32 @@ about.addEventListener('click',list1)
 skill.addEventListener('click',list2)
 experience.addEventListener('click',list3)
 }
-page4clickfunction();
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxM6hO_L67uYpPz9MKjL22-qgiLjYjNZCPEc0-cjcOPL8WRL1HXg0H7RL2_WfMLwLz3/exec'
-  const form = document.forms['submit-to-google-sheet']
+// page4clickfunction();
+//   const scriptURL = 'https://script.google.com/macros/s/AKfycbxM6hO_L67uYpPz9MKjL22-qgiLjYjNZCPEc0-cjcOPL8WRL1HXg0H7RL2_WfMLwLz3/exec'
+//   const form = document.forms['submit-to-google-sheet']
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
-  })
-  window.addEventListener("load",()=>{
-    essayinput.value = localStorage.getItem('key-message')
-})
+//   form.addEventListener('submit', (e) => {
+//     e.preventDefault()
+//     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+//       .then(response => console.log('Success!', response))
+//       .catch(error => console.error('Error!', error.message))
+//   })
+//   window.addEventListener("load",()=>{
+//     essayinput.value = localStorage.getItem('key-message')
+// })
 
 const essayinput = document.querySelector('#Message');
 essayinput.addEventListener('change',()=>{
    localStorage.setItem("key-message",essayinput.value)
 })
+
+
+
 let num =0
 function MenupageClose(){
   const menupage = document.querySelector("#menu-page");
 if(num%2==0){
-  menupage.style.transform = `translateY(0vw)`
+  menupage.style.transform = `translateY(0vh)`
 }else{
   menupage.style.transform = `translateY(-100vh)`
 }

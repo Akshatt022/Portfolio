@@ -557,7 +557,7 @@ cursor: pointer;
   .image{
     width: 300px;
     height: 300px;
-    background-image: url(./IMG_1468.JPG);
+    background-image: url(./Profile/IMG_4830-5.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1377,10 +1377,232 @@ input.slider-target {
 .card-meta span:first-child::before {
   display: none;
 }
-
-
-
-
+#page-3{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+#move-img img{
+  width: 0vw;
+}
+.carousel {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: 100vw; 
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+  
+  }
+  
+  .carousel-item {
+    --items: 10;
+    --width: clamp(300px, 40vw,  300px);
+    --height: clamp(400px, 25vw,  350px);
+    --x: calc(var(--active) * 800%);
+    --y: calc(var(--active) * 200%);
+    --rot: calc(var(--active) * 120deg);
+    --opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
+    overflow: hidden;
+    position: absolute;
+    z-index: var(--zIndex);
+    width: var(--width);
+    height: var(--height);
+    margin: calc(var(--height) * -0.5) 0 0 calc(var(--width) * -0.5);
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    user-select: none;
+    transform-origin: 0% 100%;
+    box-shadow: 0 10px 50px 10px rgba(0, 0, 0, .5);
+    background: black;
+    pointer-events: all;
+    transform:  translate(var(--x), var(--y)) rotate(var(--rot)) ;
+    transition: transform .8s cubic-bezier(0, 0.02, 0, 1);
+  
+    .carousel-box {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: opacity .8s cubic-bezier(0, 0.02, 0, 1);
+      opacity: var(--opacity);
+      font-family: 'Orelo-sw-db', serif;
+  
+  
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .5));
+      }
+    }
+  
+    .title {
+      position: absolute;
+      z-index: 1;
+      color: #fff;
+      bottom: 70px;
+      left: 20px;
+      transition: opacity .8s cubic-bezier(0, 0.02, 0, 1);
+      font-size: clamp(30px, 3vw, 30px);
+      text-shadow: 0 4px 4px rgba(0, 0, 0, .1);
+      font-family: Gilroy5;
+    }
+  
+    .num {
+      position: absolute;
+      z-index: 1;
+      color: #fff;
+      top: 10px;
+      left: 20px;
+      transition: opacity .8s cubic-bezier(0, 0.02, 0, 1);
+      font-size: clamp(20px, 10vw, 80px);
+      font-family: Gilroy1;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+  }
+  .carousel-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .carousel-box a{
+    position: absolute;
+    z-index: 99;
+    transform: translate(-50%,-50%);
+    top: 90%;
+    left: 25%;
+    text-decoration: none;
+    color: #fff;
+    font-size: 28px;
+    border: 2px solid bisque;
+    background-color: #000;
+    border-radius: 50px;
+    padding:10px;
+    font-family: Gilroy5;
+  }
+ 
+  
+  .layout {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 90px;
+      width: 10px;
+      height: 100%;
+      border: 1px solid #fff;
+      border-top: none;
+      border-bottom: none;
+      opacity: .15;
+    }
+  
+    .box {
+      position: absolute;
+      bottom: 0;
+      left: 30px;
+      color: #fff;
+      transform-origin: 0% 10%;
+      transform: rotate(-90deg);
+      font-size: 9px;
+      line-height: 1.4;
+      text-transform: uppercase;
+      opacity: .4;
+    }
+  }
+  
+  .logo {
+    position: absolute;
+    z-index: 2;
+    top: 28px;
+    right: 28px;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    opacity: .5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orelo-sw-db', serif;
+    pointer-events: all;
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    overflow: hidden;
+    padding-bottom: .1em;
+  }
+  
+  .social {
+    position: absolute;
+    z-index: 10;
+    top: 30px;
+    right: 25px;
+    color: #fff;
+    background-color: #6969691d;
+    border-radius: 50px;
+  
+    a {
+      display: inline-block;
+      margin-left: 3px;
+    }
+  
+    svg {
+      --fill: #f8f7f7;
+      width: 35px;
+      height: 35px;
+    }
+  }
+  
+  .cursor {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    --size: 50px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    border: 1px solid rgb(18, 17, 17);
+    margin: calc(var(--size) * -0.5) 0 0 calc(var(--size) * -0.5);
+    transition: transform .85s cubic-bezier(0, 0.02, 0, 1);
+    display: none;
+    pointer-events: none;
+    
+    @media (pointer: fine) {
+      display: block;
+    }
+  }
+  
+  .cursor2 {
+    --size: 19px;
+    transition-duration: .7s;
+  }
 
 
 
@@ -1400,9 +1622,7 @@ input.slider-target {
   #page1{
     display: none;
   }
-  #page3{
-    display: none;
-  }
+  
   #page4{
     display: none;
   }
