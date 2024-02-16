@@ -278,6 +278,7 @@ cursor: pointer;
     width: 100vw;
     height: 80vh;
     display: flex;
+    overflow: hidden;
 }
  #page3  #move-img{
     width: 100%;
@@ -309,7 +310,7 @@ cursor: pointer;
     z-index: 1;
     width: 100vw; 
     height: 100vh;
-    /* overflow: hidden; */
+    overflow: hidden;
     pointer-events: none;
   }
   
@@ -626,44 +627,17 @@ cursor: pointer;
   }
   .skill{
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+   display: grid;
+   grid-template-columns: repeat(4,auto);
     opacity: 0;
     position: absolute;
     top: 30%;
     transition: all ease-in-out;
+    overflow: hidden;
   }
   .skill img{
-    width: 120px;
-    height: 120px;
-  }
-  .skill .row1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-  .skill .row2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-  }
-  .experience{
-    display: flex;
-      align-items: center;
-      justify-content: center;
-    flex-direction: column;
-    opacity: 0;
-    position: absolute;
-    top: 30%;
-    transition: all ease-in-out;
-  }
-  .experience h3{
-    font-size: 45px;
-    font-family: Northwell;
+    width: 100px;
+    height: 90px;
   }
 #page5{
   width: 100vw;
@@ -1372,6 +1346,7 @@ input.slider-target {
   width: 100vw;
   height: 100vh;
   background-color: black;
+  overflow: hidden;
 }
 #move-img img{
   width: 0vw;
@@ -1386,7 +1361,6 @@ input.slider-target {
     height: 100vh;
     overflow: hidden;
     pointer-events: none;
-  
   }
   
   .carousel-item {
@@ -1617,8 +1591,8 @@ input.slider-target {
     gap: 10px; */
   }
   .image{
-    width: 300px;
-    height: 300px;
+    width: 50vw;
+    height: 50vh;
     background-image: url(./Profile/IMG_4830-5.png);
     background-position: center;
     background-size: cover;
@@ -1699,32 +1673,86 @@ input.slider-target {
   }
   .skill{
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
     opacity: 0;
     position: absolute;
     top: 30%;
     transition: all ease-in-out;
+    overflow: hidden;
   }
   .skill img{
     width: 90px;
     height: 80px;
   }
-  .skill .row1{
+  #page5{
+   width: 100vw;
+   height: 100vh;
+   /* display: flex;
+   flex-direction: column; */
+  }
+  .contact{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .container-left{
+    width: 100%;
+    height: 35%;
+    margin: 0;
+    padding: 0;
+  }
+  .container-left h1{
+    font-size: 10vw;
+  }
+  .container-left p{
+    font-size: 5vw;
+  }
+  .container-right{
+    width: 100%;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
   }
-  .skill .row2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+  .container-right form{
+    width: 100%;
   }
-
+  form input,form textarea{
+    width: 80%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin:8px;
+    color: #fff;
+    font-size: 19px;
+    border-radius: 6px;
+  }
+  #submit{
+    /* width: 10px; */
+    padding: 1vh 9vw;
+    font-size: 4vw;
+    font-family: Gilroy5;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 6px;
+    margin-left: 25%;
+    background-color: #ff009d;
+    cursor: pointer;
+    backdrop-filter: 0 0 10px 10px black;
+  }
+  #page5>p{
+    position: absolute;
+    bottom: 1%;
+    transform: translate(-50%,-50%);
+    font-size: 3vw;
+    font-family: Gilroy4;
+    color: #837e7e;
+    white-space: nowrap;
+  }
 
 
 
@@ -1744,8 +1772,4 @@ input.slider-target {
     display: none;
   }
   
-
-  #page5{
-    display: none;
-  }
 }
