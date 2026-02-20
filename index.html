@@ -1,415 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
-    />
+    <title>Akshat | Creative Frontend Developer</title>
     <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/6ecd7134ee.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="cursor"></div>
     <div class="cursor cursor2"></div>
-    <div id="nav">
-      <div id="part1">
-        <h3>akshat.</h3>
-      </div>
-      <ul id="part2">
-        <li><a href="#page3">Projects</a></li>
-        <li><a href="#page4">Skills</a></li>
-        <li><a href="#page4">About</a></li>
-        <li><a href="#page5">Contact</a></li>
-      </ul>
-      <div id="part3">
-        <a
-          target="_blank"
-          href="https://instagram.com/akshattt_022?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D"
-          ><i class="ri-instagram-line"></i
-        ></a>
-        <a
-          target="_blank"
-          href="https://www.linkedin.com/in/akshat-singh-b08297260"
-          ><i class="ri-linkedin-box-line"></i
-        ></a>
-        <a target="_blank" href="https://github.com/Akshatt022"
-          ><i class="fa-brands fa-github"></i
-        ></a>
-      </div>
-    </div>
-    <div id="main">
-      <div id="responsive-view">
-        <div id="menu-page">
-          <div id="menus">
-            <ul id="part2">
-              <li>
-                <i class="fa-solid fa-list-check"></i
-                ><a href="#page3">Projects</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-code"></i><a href="#page4">Skills</a>
-              </li>
-              <li>
-                <i class="fa-regular fa-user"></i><a href="#page4">About</a>
-              </li>
-              <li>
-                <i class="fa-regular fa-address-book"></i
-                ><a href="#page5">Contact</a>
-              </li>
-            </ul>
-            <div id="part3">
-              <a
-                target="_blank"
-                href="https://instagram.com/akshattt_022?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D"
-                ><i class="ri-instagram-line"></i
-              ></a>
-              <a
-                target="_blank"
-                href="https://www.linkedin.com/in/akshat-singh-b08297260"
-                ><i class="ri-linkedin-box-line"></i
-              ></a>
-              <a target="_blank" href="https://github.com/Akshatt022"
-                ><i class="fa-brands fa-github"></i
-              ></a>
-            </div>
-            <p>Copyright © Akshat. Made with ❤️ by Akshat singh</p>
-          </div>
+
+    <nav id="nav">
+        <div class="nav-logo">akshat.</div>
+        <ul class="nav-links">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-social">
+            <a target="_blank" href="https://instagram.com/akshattt_022?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram"
+                    style="width: 20px; height: 20px;" />
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/akshat-singh-b08297260">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg"
+                    alt="LinkedIn" style="width: 20px; height: 20px;" />
+            </a>
+            <a target="_blank" href="https://github.com/Akshatt022">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                    alt="GitHub" style="width: 20px; height: 20px;" />
+            </a>
         </div>
-        <div id="mob-nav">
-          <div id="part1">
-            <h3>akshat.</h3>
-          </div>
-          <div id="Hamburger-menu">
-            <button
-              class="menu"
-              onclick="this.classList.toggle('opened');this.setAttribute('aria-expanded', this.classList.contains('opened'))"
-              aria-label="Main Menu"
-            >
-              <svg width="70" height="70" viewBox="0 0 100 100">
-                <path
-                  class="line line1"
-                  d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"
-                />
-                <path class="line line2" d="M 20,50 H 80" />
-                <path
-                  class="line line3"
-                  d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-        <div id="responsive-page1">
-          <div id="r-circle">
-            <img
-              src="./Profile/15af9676-4bc7-4b8e-9863-f84eedb05e30.jpg"
-              alt=""
-            />
-          </div>
-          <div id="text">
-            <h3>hello,</h3>
-            <h1>I'm a <span id="type1"> Frontend developer</span></h1>
-            <p>
-              I am Akshat,a web developer.I’m passionate about creating
-              beautiful and functional websites that enhance user experience and
-              solve real-world problems. I have experience in HTML, CSS,
-              JavaScript, and React, as well as in using various tools and
-              frameworks to build and deploy web applications. I’m also a
-              confident and effective communicator who enjoys sharing my
-              knowledge and insights with others. I have given presentations and
-              workshops on various topics . I’m always eager to learn new skills
-              and technologies, and to collaborate with other developers and
-              professionals.
-            </p>
-            <div id="buttons">
-              <button>Download CV</button>
-              <button>Hire Me</button>
-            </div>
-          </div>
-        </div>
+    </nav>
 
-        </div>
-      <div id="page1">
-        <div id="left">
-          <div id="text-box">
-            <h3>hello,</h3>
-            <h1>I'm a <span id="type">Frontend developer</span></h1>
-            <p>
-              I am Akshat,a web developer.I’m passionate about creating
-              beautiful and functional websites that enhance user experience and
-              solve real-world problems. I have experience in HTML, CSS,
-              JavaScript, and React, as well as in using various tools and
-              frameworks to build and deploy web applications. I’m also a
-              confident and effective communicator who enjoys sharing my
-              knowledge and insights with others. I have given presentations and
-              workshops on various topics . I’m always eager to learn new skills
-              and technologies, and to collaborate with other developers and
-              professionals.
-            </p>
-            <button>Download CV</button>
-            <button>Hire Me</button>
-          </div>
-        </div>
-        <div id="circle">
-          <img
-            src="./Profile/15af9676-4bc7-4b8e-9863-f84eedb05e30.jpg"
-            alt=""
-          />
-        </div>
-      </div>
-      <div id="page3">
-        <div id="project-list">
-          <div id="move-img">
-            <img src="./screenshot/home_projects-bg.png" alt="" />
-            <img src="./screenshot/home_projects-bg.png" alt="" />
-            <img src="./screenshot/home_projects-bg.png" alt="" />
-            <img src="./screenshot/home_projects-bg.png" alt="" />
-            <img src="./screenshot/home_projects-bg.png" alt="" />
-          </div>
-        </div>
-        <div class="carousel">
-          <div class="carousel-item">
-            <div class="carousel-box">
-              <div class="title">Bownds ranches</div>
-              <div class="num">01</div>
-              <a
-                target="_blank"
-                href="https://akshatt022.github.io/Finalproject"
-                >Visit Site</a
-              >
-              <img src="./screenshot/Screenshot (42).png" alt="" />
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="carousel-box">
-              <div class="title">Zelt</div>
-              <div class="num">02</div>
-              <a
-                target="_blank"
-                href="https://akshatt022.github.io/zeltwebsite/"
-                >Visit Site</a
-              >
-              <img src="./screenshot/Screenshot (46).png" />
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="carousel-box">
-              <div class="title">Ucollex</div>
-              <div class="num">03</div>
-              <a target="_blank" href="https://akshatt022.github.io/ucollex/"
-                >Visit Site</a
-              >
-              <img src="./screenshot/Screenshot (43).png" />
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="carousel-box">
-              <div class="title">Gokagn</div>
-              <div class="num">04</div>
-              <a target="_blank" href="https://akshatt022.github.io/Gokagn/"
-                >Visit site</a
-              >
-              <img src="./screenshot/Screenshot (44).png" />
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="carousel-box">
-              <div class="title">Webflow</div>
-              <div class="num">05</div>
-              <a target="_blank" href="https://akshatt022.github.io/Webflow/"
-                >Visit Site</a
-              >
-              <img src="./screenshot/Screenshot (45).png" />
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="carousel-box">
-              <div class="title">Supra</div>
-              <div class="num">06</div>
-              <a href="#">Visit Site</a>
-              <img src="./screenshot/Screenshot (47).png" />
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="carousel-box">
-              <div class="title">Snapspeed</div>
-              <div class="num">07</div>
-              <a href="#">Visit Site</a>
-              <img src="./screenshot/Screenshot (48).png" />
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="carousel-box">
-              <div class="title">OKCC</div>
-              <div class="num">08</div>
-              <a href="#">Visit Site</a>
-              <img src="./screenshot/Screenshot (51).png" />
-            </div>
-          </div>
-
-          <div class="carousel-item">
-            <div class="carousel-box">
-              <div class="title">NIKE</div>
-              <div class="num">09</div>
-              <a href="#">Visit Site</a>
-              <img src="./screenshot/Screenshot (49).png" />
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="carousel-box">
-              <div class="title">Cloudy</div>
-              <div class="num">10</div>
-              <a href="#">Visit Site</a>
-              <img src="./screenshot/Screenshot (23).png" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="page4">
-        <!-- <h1>Detail corner<i class="ri-arrow-right-down-line"></i></h1> -->
-        <div id="centre">
-          <div class="image"></div>
-          <div id="detail-corner">
-            <div class="list">
-              <h3 id="onea" class="list1">About</h3>
-              <h3 class="list2">Skills</h3>
-            </div>
-            <div class="about">
-              <div class="keywords">
-                <div class="keyrow1">
-                  <h3>Technical Skills</h3>
-                  <h3>Creative Skills</h3>
-                  <h3>Problem-Solving</h3>
-                  <h3>Leadership</h3>
+    <main id="main">
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <h3 class="glow-text">HELLO.</h3>
+                <h1 class="massive-text">I'M A <br /><span id="type-v3" class="accent-white">DEVELOPER</span></h1>
+                <p class="hero-desc">Building digital experiences that blend high-performance engineering with striking,
+                    modern aesthetics.</p>
+                <div class="hero-btns">
+                    <a href="./Akshat_Singh_CV.pdf" download="Akshat_Singh_CV.pdf" class="btn-primary"
+                        style="text-decoration: none;"><span>Download CV</span></a>
+                    <button class="btn-secondary"><span>Hire Me</span></button>
                 </div>
-                <div class="keyrow2">
-                  <h3>Collaboration</h3>
-                  <h3>Time Management</h3>
-                  <h3>Adaptability</h3>
+            </div>
+            <div class="hero-visual">
+                <div class="image-wrapper">
+                    <img src="./Profile/15af9676-4bc7-4b8e-9863-f84eedb05e30.webp" alt="Akshat Portrait" />
+                    <div class="glow-ring"></div>
                 </div>
-              </div>
-              <p>
-                Welcome! I'm a dedicated front-end developer with a flair for
-                crafting captivating digital experiences. Proficient in HTML,
-                CSS, and JavaScript, I specialize in seamlessly blending design
-                with functionality. My expertise lies in creating responsive and
-                user-friendly websites that shine across devices and browsers.
-                Let's collaborate to build innovative and impactful web
-                solutions that leave a mark.
-              </p>
             </div>
-            <div class="skill">
-                <img
-                  src="https://cdn3d.iconscout.com/3d/free/thumb/free-html-5728485-4781249.png"
-                  alt=""
-                />
-                <img
-                  src="https://icon-library.com/images/css-icon-png/css-icon-png-8.jpg"
-                  alt=""
-                />
-                <img
-                  src="https://icon-library.com/images/javascript-icon-png/javascript-icon-png-23.jpg"
-                  alt=""
-                />
-                <img
-                  src="https://cdn0.iconfinder.com/data/icons/designer-skills/128/node-js-512.png"
-                  alt=""
-                />
-                <img
-                  src="https://cdn.iconscout.com/icon/free/png-256/free-jquery-8-1175153.png"
-                  alt=""
-                />
-                <img
-                  id="one"
-                  src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"
-                  alt=""
-                />
-                <img
-                  src="https://cdn1.iconfinder.com/data/icons/education-set-3-3/74/15-512.png"
-                  alt=""
-                />
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/103/103093.png"
-                  alt=""
-                />
-                <img
-                  id="four"
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png"
-                  alt=""
-                />
-              </div>
-          </div>
-        </div>
-      </div>
-      <div id="page5">
-        <div class="contact">
-          <div class="container-left">
-            <h1 class="sub-title">
-              Contact Me<i class="fa-regular fa-address-book"></i>
-            </h1>
-            <p>
-              <i class="fa-regular fa-envelope"></i
-              >akshatsingh22032004@gmail.com
-            </p>
-            <p><i class="fa-solid fa-phone-volume"></i>97552446605</p>
-            <div class="social-icon">
-              <a
-                target="_blank"
-                href="https://instagram.com/akshattt_022?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D"
-                ><i class="ri-instagram-line"></i
-              ></a>
-              <a
-                target="_blank"
-                href="https://www.linkedin.com/in/akshat-singh-b08297260"
-                ><i class="ri-linkedin-box-line"></i
-              ></a>
-              <a target="_blank" href="https://github.com/Akshatt022"
-                ><i class="fa-brands fa-github"></i
-              ></a>
+        </section>
+
+        <section id="projects">
+            <div class="section-title">
+                <h2>SELECTED <span class="accent-grey">WORKS</span></h2>
             </div>
-          </div>
-          <div class="container-right">
-            <form action="" name="submit-to-google-sheet">
-              <input type="text" name="Name" placeholder="Your Name" required />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-              />
-              <textarea
-                name="Message"
-                id="Message"
-                rows="6"
-                placeholder="Your Message"
-              ></textarea>
-              <input id="submit" type="submit" />
-            </form>
-          </div>
-        </div>
-        <p>Copyright © Akshat. Made with ❤️ by Akshat singh</p>
-      </div>
-    </div>
-    
+            <div class="carousel">
+                <div class="carousel-item" data-category="frontend">
+                    <div class="carousel-box">
+                        <div class="title">Bownds ranches</div>
+                        <div class="num">01</div>
+                        <a target="_blank" href="https://akshatt022.github.io/Finalproject">Visit</a>
+                        <img src="./screenshot/Screenshot (42).webp" alt="Bownds Ranches" />
+                    </div>
+                </div>
+                <div class="carousel-item" data-category="frontend">
+                    <div class="carousel-box">
+                        <div class="title">Zelt</div>
+                        <div class="num">02</div>
+                        <a target="_blank" href="https://akshatt022.github.io/zeltwebsite/">Visit</a>
+                        <img src="./screenshot/Screenshot (46).webp" alt="Zelt" />
+                    </div>
+                </div>
+                <div class="carousel-item" data-category="frontend">
+                    <div class="carousel-box">
+                        <div class="title">Ucollex</div>
+                        <div class="num">03</div>
+                        <a target="_blank" href="https://akshatt022.github.io/ucollex/">Visit</a>
+                        <img src="./screenshot/Screenshot (43).webp" alt="Ucollex" />
+                    </div>
+                </div>
+                <div class="carousel-item" data-category="frontend">
+                    <div class="carousel-box">
+                        <div class="title">Gokagn</div>
+                        <div class="num">04</div>
+                        <a target="_blank" href="https://akshatt022.github.io/Gokagn/">Visit</a>
+                        <img src="./screenshot/Screenshot (44).webp" alt="Gokagn" />
+                    </div>
+                </div>
+                <div class="carousel-item" data-category="frontend">
+                    <div class="carousel-box">
+                        <div class="title">Webflow</div>
+                        <div class="num">05</div>
+                        <a target="_blank" href="https://akshatt022.github.io/Webflow/">Visit</a>
+                        <img src="./screenshot/Screenshot (45).webp" alt="Webflow" />
+                    </div>
+                </div>
+                <div class="carousel-item" data-category="frontend">
+                    <div class="carousel-box">
+                        <div class="title">Supra</div>
+                        <div class="num">06</div>
+                        <a href="#">Visit</a>
+                        <img src="./screenshot/Screenshot (47).webp" alt="Supra" />
+                    </div>
+                </div>
+                <div class="carousel-item" data-category="frontend">
+                    <div class="carousel-box">
+                        <div class="title">Snapspeed</div>
+                        <div class="num">07</div>
+                        <a href="#">Visit</a>
+                        <img src="./screenshot/Screenshot (48).webp" alt="Snapspeed" />
+                    </div>
+                </div>
+
+                <div class="carousel-item" data-category="frontend">
+                    <div class="carousel-box">
+                        <div class="title">Frontend App</div>
+                        <div class="num">08</div>
+                        <a href="#">Visit</a>
+                        <img src="./screenshot/Screenshot (47).webp" alt="Frontend App" />
+                    </div>
+                </div>
+
+                <!-- Full Stack Projects -->
+                <div class="carousel-item" data-category="fullstack">
+                    <div class="carousel-box">
+                        <div class="title">Blinkit Clone</div>
+                        <div class="num">02</div>
+                        <a target="_blank" href="https://blinkit-pknr.onrender.com">Visit</a>
+                        <img src="./screenshot/Screenshot 2026-02-20 173603.png" alt="Blinkit Clone" />
+                    </div>
+                </div>
+                <div class="carousel-item" data-category="fullstack">
+                    <div class="carousel-box">
+                        <div class="title">Mockint</div>
+                        <div class="num">01</div>
+                        <a target="_blank" href="https://mockint-copy-1.onrender.com">Visit</a>
+                        <img src="./screenshot/Screenshot 2026-02-20 173112.png" alt="Mockint" />
+                    </div>
+                </div>
+                <div class="carousel-item" data-category="fullstack">
+                    <div class="carousel-box">
+                        <div class="title">ChatPro</div>
+                        <div class="num">03</div>
+                        <a target="_blank" href="https://chatpro-zt72.onrender.com">Visit</a>
+                        <img src="./screenshot/Screenshot 2026-02-20 173321.png" alt="ChatPro" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Category Toggle -->
+            <div class="project-toggle-container">
+                <button class="project-toggle" data-filter="frontend">Frontend Projects</button>
+                <button class="project-toggle active" data-filter="fullstack">Full Stack Projects</button>
+            </div>
+        </section>
+
+        <!-- Bento Box About -->
+        <section id="about">
+            <div class="bento-container">
+                <div class="bento-box about-main">
+                    <h2>WHO I AM</h2>
+                    <p>Hi I am Akshat, a web developer . I’m passionate about creating beautiful and functional websites
+                        that enhance user experience and solve real-world problems. I have experience in HTML, CSS,
+                        JavaScript, and React, as well as in using various tools and frameworks to build and deploy web
+                        applications. I’m also a confident and enjoys sharing my knowledge and insights with others. I’m
+                        always eager to learn new skills and technologies, and to collaborate with other developers and
+                        professionals.</p>
+                </div>
+                <div class="bento-box image-tile">
+                    <img src="./Profile/IMG_4830-5.webp" alt="Akshat" />
+                </div>
+                <div class="bento-box stats-tile">
+                    <div class="stat">
+                        <h3>10+</h3>
+                        <p>Projects</p>
+                    </div>
+                    <div class="stat">
+                        <h3>1+</h3>
+                        <p>Years Exp.</p>
+                    </div>
+                </div>
+                <div class="bento-box skills-tile">
+                    <h2>TECH STACK</h2>
+                    <div class="skills-grid">
+                        <div class="skill-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                                alt="HTML" title="HTML5" /></div>
+                        <div class="skill-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                                alt="CSS" title="CSS3" /></div>
+                        <div class="skill-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                                alt="JS" title="JavaScript" /></div>
+                        <div class="skill-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                                alt="React" title="React" /></div>
+                        <div class="skill-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+                                alt="Node" title="Node.js" /></div>
+                        <div class="skill-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg"
+                                alt="Express" title="Express.js" /></div>
+                        <div class="skill-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg"
+                                alt="MongoDB" title="MongoDB" /></div>
+                        <div class="skill-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+                                alt="SQL" title="SQL / MySQL" /></div>
+                        <div class="skill-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+                                alt="C#" title="C#" /></div>
+                        <div class="skill-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+                                alt="C++" title="C++" /></div>
+                        <div class="skill-icon"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+                                alt="Git" title="Git" /></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact">
+            <div class="contact-wrapper">
+                <div class="contact-header">
+                    <h2>LET'S <span class="accent-white">CONNECT</span></h2>
+                    <p>Reach out for collaborations, projects, or just to say hi.</p>
+                </div>
+                <form id="contact-form-v3">
+                    <div class="input-group">
+                        <input type="text" id="name" placeholder=" " required />
+                        <label>Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder=" " required />
+                        <label>Email</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" rows="5" placeholder=" " required></textarea>
+                        <label>Message</label>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;"><span>Send Message</span></button>
+                </form>
+            </div>
+            <footer class="footer">
+                <p>© 2026 Akshat Singh. Crafted with <span style="color:#ff00c8">♥</span></p>
+            </footer>
+        </section>
+    </main>
+
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script src="./script.js"></script>
-  </body>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "nt3GA5xrzE1XAp9iy",
+            });
+        })();
+    </script>
+    <script src="script.js"></script>
+</body>
+
 </html>

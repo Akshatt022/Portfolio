@@ -1,111 +1,121 @@
-var typeEffect = new Typed("#type", {
-  strings: ["Frontend developer.", "Designer.", "Coder."],
-  loop: true,
-  typeSpeed: 101,
-  backSpeed: 80,
-  backDelay: 1500,
-});
-var typeEffect = new Typed("#type1", {
-  strings: ["Frontend developer.", "Designer.", "Coder."],
-  loop: true,
-  typeSpeed: 101,
-  backSpeed: 80,
-  backDelay: 1500,
+// script-v3.js
+
+// 1. Typed.js Init
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.querySelector('#type-v3')) {
+        new Typed('#type-v3', {
+            strings: ["DEVELOPER.", "DESIGNER.", "CREATOR."],
+            typeSpeed: 80,
+            backSpeed: 50,
+            backDelay: 2000,
+            loop: true,
+            cursorChar: '_'
+        });
+    }
 });
 
-// ------------------ scroll js is here --------------------------//
+// 2. Custom Cursor
+const cursor = document.querySelector('.cursor');
+const cursor2 = document.querySelector('.cursor2');
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-/*--------------------
-Vars
---------------------*/
+if (!isMobile && cursor && cursor2) {
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        cursor2.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+
+    // Hover effects on interactive elements
+    const interactables = document.querySelectorAll('a, button, input, textarea, .carousel-item');
+    interactables.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.style.transform = cursor.style.transform + ' scale(1.5)';
+            cursor.style.borderColor = 'var(--accent-pink)';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.style.transform = cursor.style.transform.replace(' scale(1.5)', '');
+            cursor.style.borderColor = 'var(--accent-cyan)';
+        });
+    });
+}
+
+// 3. Carousel Logic
 let progress = 50;
 let startX = 0;
 let active = 0;
 let isDown = false;
+let activeCategory = 'fullstack';
 
-/*--------------------
-Contants
---------------------*/
-const speedWheel = 0.02;
+const speedWheel = 0.02; // Keep it smooth
 const speedDrag = -0.1;
 
-/*--------------------
-Get Z
---------------------*/
+const $items = document.querySelectorAll('.carousel-item');
+
 const getZindex = (array, index) =>
-  array.map((_, i) =>
-    index === i ? array.length : array.length - Math.abs(index - i)
-  );
+    array.map((_, i) =>
+        index === i ? array.length : array.length - Math.abs(index - i)
+    );
 
-/*--------------------
-Items
---------------------*/
-const $items = document.querySelectorAll(".carousel-item");
-const $cursors = document.querySelectorAll(".cursor");
-
-const displayItems = (item, index, active) => {
-  const zIndex = getZindex([...$items], active)[index];
-  item.style.setProperty("--zIndex", zIndex);
-  item.style.setProperty("--active", (index - active) / $items.length);
+const displayItems = (item, index, activeIdx) => {
+    const virtualTotal = 10;
+    const zIndex = getZindex([...Array(virtualTotal)], activeIdx)[index];
+    item.style.setProperty('--zIndex', zIndex);
+    item.style.setProperty('--active', (index - activeIdx) / virtualTotal);
 };
 
-/*--------------------
-Animate
---------------------*/
 const animate = () => {
-  progress = Math.max(0, Math.min(progress, 100));
-  active = Math.floor((progress / 100) * ($items.length - 1));
+    progress = Math.max(0, Math.min(progress, 100));
 
-  $items.forEach((item, index) => displayItems(item, index, active));
+    const category = typeof activeCategory !== 'undefined' ? activeCategory : 'fullstack';
+    const visibleItems = Array.from($items).filter(item => item.getAttribute('data-category') === category);
+
+    if (visibleItems.length === 0) return;
+
+    active = Math.floor((progress / 100) * (visibleItems.length - 1));
+
+    visibleItems.forEach((item, index) => displayItems(item, index, active));
 };
-animate();
 
-/*--------------------
-Click on Items
---------------------*/
-$items.forEach((item, i) => {
-  item.addEventListener("click", () => {
-    progress = (i / $items.length) * 100 + 10;
-    animate();
-  });
-});
-
-/*--------------------
-Handlers
---------------------*/
+// Interaction Handlers for Carousel
 const handleWheel = (e) => {
-  const wheelProgress = e.deltaY * speedWheel;
-  progress = progress + wheelProgress;
-  animate();
+    const carouselSection = document.getElementById('projects');
+    if (!carouselSection) return;
+    const rect = carouselSection.getBoundingClientRect();
+
+    // If we are looking right at the carousel section
+    if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+        const wheelProgress = e.deltaY * speedWheel;
+        progress = progress + wheelProgress;
+        animate();
+    }
 };
 
 const handleMouseMove = (e) => {
-  if (e.type === "mousemove") {
-    $cursors.forEach(($cursor) => {
-      $cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-  }
-  if (!isDown) return;
-  const x = e.clientX || (e.touches && e.touches[0].clientX) || 0;
-  const mouseProgress = (x - startX) * speedDrag;
-  progress = progress + mouseProgress;
-  startX = x;
-  animate();
+    if (!isDown) return;
+    if (e.target.tagName.toLowerCase() === 'a') return;
+
+    const x = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    const mouseProgress = (x - startX) * speedDrag;
+    progress = progress + mouseProgress;
+    startX = x;
+    animate();
 };
 
 const handleMouseDown = (e) => {
-  isDown = true;
-  startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    if (e.target.tagName.toLowerCase() === 'a') {
+        isDown = false;
+        return;
+    }
+
+    if (e.target.closest('#projects')) {
+        isDown = true;
+        startX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
+    }
 };
 
-const handleMouseUp = () => {
-  isDown = false;
-};
+const handleMouseUp = () => { isDown = false; };
 
-/*--------------------
-Listeners
---------------------*/
-document.addEventListener("mousewheel", handleWheel);
+document.addEventListener("wheel", handleWheel, { passive: true });
 document.addEventListener("mousedown", handleMouseDown);
 document.addEventListener("mousemove", handleMouseMove);
 document.addEventListener("mouseup", handleMouseUp);
@@ -113,66 +123,117 @@ document.addEventListener("touchstart", handleMouseDown);
 document.addEventListener("touchmove", handleMouseMove);
 document.addEventListener("touchend", handleMouseUp);
 
-var page3 = document.querySelector("#page2");
+// Filter logic for projects
+const toggles = document.querySelectorAll('.project-toggle');
 
-// gsap.from("#page3",{
-//   scrollTrigger:{
-//     trigger:"#page3",
-//     start:"top top",
-//     scroller:"#main",
-//     pin:true
-//   }
-// })
+// Initial filter setup
+const updateFilter = () => {
+    // Hide or show items based on category
+    $items.forEach(item => {
+        if (item.getAttribute('data-category') === activeCategory) {
+            item.style.display = 'block';
+            item.style.opacity = '';
+            item.style.pointerEvents = 'auto';
+        } else {
+            item.style.opacity = '0';
+            item.style.pointerEvents = 'none';
+            item.style.display = 'none';
+        }
+    });
 
-const about = document.querySelector(".list1");
-const aboutpara = document.querySelector(".about");
-const skill = document.querySelector(".list2");
-const skillimage = document.querySelector(".skill");
-
-
-const list1 = () => {
-  aboutpara.style.opacity = 1;
-  about.style.borderBottom = `3px solid red`;
-  skill.style.borderBottom = "0";
-  skillimage.style.opacity = 0;
-};
-const list2 = () => {
-  about.style.borderBottom = `0px`;
-  skill.style.borderBottom = "3px solid red";
-  aboutpara.style.opacity = 0;
-  skillimage.style.opacity = 1;
+    // Reset progress and re-animate only visible items
+    progress = 50;
+    animate();
 };
 
-about.addEventListener("click", list1);
-skill.addEventListener("click", list2);
-// page4clickfunction();
-//   const scriptURL = 'https://script.google.com/macros/s/AKfycbxM6hO_L67uYpPz9MKjL22-qgiLjYjNZCPEc0-cjcOPL8WRL1HXg0H7RL2_WfMLwLz3/exec'
-//   const form = document.forms['submit-to-google-sheet']
+toggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+        // Update active class
+        toggles.forEach(btn => btn.classList.remove('active'));
+        e.target.classList.add('active');
 
-//   form.addEventListener('submit', (e) => {
-//     e.preventDefault()
-//     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-//       .then(response => console.log('Success!', response))
-//       .catch(error => console.error('Error!', error.message))
-//   })
-//   window.addEventListener("load",()=>{
-//     essayinput.value = localStorage.getItem('key-message')
-// })
-
-const essayinput = document.querySelector("#Message");
-essayinput.addEventListener("change", () => {
-  localStorage.setItem("key-message", essayinput.value);
+        // Update category and trigger filter
+        activeCategory = e.target.getAttribute('data-filter');
+        updateFilter();
+    });
 });
 
-let num = 0;
-function MenupageClose() {
-  const menupage = document.querySelector("#menu-page");
-  if (num % 2 == 0) {
-    menupage.style.transform = `translateY(0vh)`;
-  } else {
-    menupage.style.transform = `translateY(-100vh)`;
-  }
-  num++;
+// Run initial filter on load
+updateFilter();
+
+// Click directly on an item to bring it to front
+$items.forEach((item, i) => {
+    item.addEventListener('click', (e) => {
+        // Exclude links
+        if (e.target.tagName.toLowerCase() === 'a') return;
+
+        // Only allow clicking on currently visible items
+        if (item.getAttribute('data-category') !== activeCategory) return;
+
+        // Find the relative index of THIS item inside the dynamically filtered array
+        const visibleItems = Array.from($items).filter(el => el.getAttribute('data-category') === activeCategory);
+        const relativeIndex = visibleItems.indexOf(item);
+
+        if (relativeIndex === -1) return;
+
+        progress = (relativeIndex / (visibleItems.length - 1)) * 100;
+
+        if (progress === 0) progress += 0.1;
+        if (progress === 100) progress -= 0.1;
+
+        animate();
+    });
+});
+
+// 4. Form Submission (EmailJS Integration)
+const form = document.getElementById('contact-form-v3');
+if (form) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span>Sending...</span>';
+
+        // Gather form data
+        const templateParams = {
+            from_name: document.getElementById('name').value,
+            from_email: document.getElementById('email').value,
+            message: document.getElementById('message').value,
+            to_name: 'Akshat', // Your name
+            reply_to: document.getElementById('email').value,
+        };
+
+        // Send using EmailJS 
+        emailjs.send(
+            'service_2kqs98p',
+            'template_kusxm9n',
+            templateParams,
+            'nt3GA5xrzE1XAp9iy'
+        )
+            .then(function (response) {
+                console.log('SUCCESS!', response.status, response.text);
+                btn.innerHTML = '<span>Sent Successfully!</span>';
+                btn.style.background = '#4CAF50'; // Green success state
+                btn.style.color = '#fff';
+                form.reset();
+
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = ''; // Revert to original
+                    btn.style.color = '';
+                }, 3000);
+            }, function (error) {
+                console.log('FAILED...', error);
+                alert("EmailJS Error: " + (error.text || error.message || JSON.stringify(error)));
+                btn.innerHTML = '<span>Error! Try Again.</span>';
+                btn.style.background = '#f44336'; // Red error state
+                btn.style.color = '#fff';
+
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                    btn.style.color = '';
+                }, 3000);
+            });
+    });
 }
-const hamburgerMenu = document.querySelector("#Hamburger-menu");
-hamburgerMenu.addEventListener("click", MenupageClose);
